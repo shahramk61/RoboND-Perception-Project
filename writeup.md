@@ -31,16 +31,6 @@
 
 [//]: # (Image References)
 
-[image1]: ./writeup_pic/1.png
-[image2]: ./writeup_pic/2.png
-[image3]: ./writeup_pic/3.png
-[image4]: ./writeup_pic/4.png
-[image5]: ./writeup_pic/5.png
-[image6]: ./writeup_pic/6.png
-[image7]: ./writeup_pic/7.png
-[image8]: ./writeup_pic/8.png
-[image9]: ./writeup_pic/9.png
-[image10]: ./writeup_pic/10.png
 
 ---
 ### Writeup / README
@@ -68,11 +58,11 @@ Image below is noisy point cloud after Voxel downsampling:
 
 Image below is object after removing the noise and the table:
 
-![alt text][image2]
+![alt text](https://github.com/shahramk61/RoboND-Perception-Project/blob/master/writeup_pic/2.PNG)
 
 Image below is the table after removing the noise and the objects:
 
-![alt text][image3]
+![alt text](https://github.com/shahramk61/RoboND-Perception-Project/blob/master/writeup_pic/3.PNG)
 
 #### 2. Complete Exercise 2 steps: Pipeline including clustering for segmentation implemented.  Steps taken for clustering:
 
@@ -84,7 +74,7 @@ Image below is the table after removing the noise and the objects:
 
 Below is the image of clustered object with unique color assigned.
 
-![alt text][image4]
+![alt text](https://github.com/shahramk61/RoboND-Perception-Project/blob/master/writeup_pic/4.PNG)
 
 #### 2. Complete Exercise 3 Steps.  Features extracted and SVM trained.  Object recognition implemented.
 Steps to features extraction and SVM:
@@ -97,11 +87,11 @@ Steps to features extraction and SVM:
 
 Below are the confusion matrix:
 
-![alt text][image5]
+![alt text](https://github.com/shahramk61/RoboND-Perception-Project/blob/master/writeup_pic/5.PNG)
 
-![alt text][image6]
+![alt text](https://github.com/shahramk61/RoboND-Perception-Project/blob/master/writeup_pic/6.PNG)
 
-![alt text][image7]
+![alt text](https://github.com/shahramk61/RoboND-Perception-Project/blob/master/writeup_pic/7.PNG)
 
 ### Pick and Place Setup
 
@@ -187,7 +177,7 @@ object_list:
 ```
 
 Below is the image of world 1 table top:
-![alt text][image8]
+![alt text](https://github.com/shahramk61/RoboND-Perception-Project/blob/master/writeup_pic/8.PNG)
 
 
 2- world two: four out of five objects were identified correctly.
@@ -291,7 +281,7 @@ object_list:
 ```
 
 Below is the image of world 2 table top:
-![alt text][image9]
+![alt text](https://github.com/shahramk61/RoboND-Perception-Project/blob/master/writeup_pic/9.PNG)
 
 
 
@@ -489,7 +479,7 @@ object_list:
 ```
 world 3 output yaml file:
 
-![alt text][image10]
+![alt text](https://github.com/shahramk61/RoboND-Perception-Project/blob/master/writeup_pic/10.PNG)
 
 
 ### Challenges
