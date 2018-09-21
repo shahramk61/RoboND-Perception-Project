@@ -58,7 +58,7 @@ Steps taken for RANSAC filtering:
 2- Vox grid down-sampling : A voxel grid filter allows us to downsample the data by taking a spatial average of the points in the cloud confined by each voxel therefore reduce amount of data that needs to be processed without losing any information. For this project voxel leaf size of 0.01 seems to work the best.
 
 Image below is noisy point cloud after Voxel downsampling:
-![alt text][image1]
+![alt text](https://github.com/shahramk61/RoboND-Perception-Project/blob/master/writeup_pic/1.PNG)
 
 3- PassThrough Filter : Passthrough filter is used to further reduce the amount of point cloud data that needs to be processed by cutting the unwanted data. For this project the z axis is limited between 0.6 and 1, also the y axis is limited between -0.4 and 0.4
 
