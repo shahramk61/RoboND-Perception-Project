@@ -53,9 +53,9 @@ def send_to_yaml(yaml_filename, dict_list):
 def pcl_callback(pcl_msg):
     # Exercise-2 TODOs:
 
-    # TODO: Convert ROS msg to PCL data
+    # Convert ROS msg to PCL data
     PCL_data = ros_to_pcl(pcl_msg)
-    # TODO: Voxel Grid Downsampling
+    # Voxel Grid Downsampling
 
     vox = PCL_data.make_voxel_grid_filter()
 
@@ -68,7 +68,7 @@ def pcl_callback(pcl_msg):
     # Call the filter function to obtain the resultant downsampled point cloud
     cloud_filtered = vox.filter()
 
-    # TODO: PassThrough Filter
+    # PassThrough Filter
     # Create a PassThrough filter object.
     passthrough = cloud_filtered.make_passthrough_filter()
 
@@ -111,7 +111,7 @@ def pcl_callback(pcl_msg):
     # Finally call the filter function for magic
     cloud_filtered = outlier_filter.filter()
 
-    # TODO: RANSAC Plane Segmentation
+    # RANSAC Plane Segmentation
     # Create the segmentation object
     seg = cloud_filtered.make_segmenter()
 
@@ -126,13 +126,13 @@ def pcl_callback(pcl_msg):
     # Call the segment function to obtain set of inlier indices and model coefficients
     inliers, coefficients = seg.segment()
 
-    # TODO: Extract inliers and outliers
+    # Extract inliers and outliers
 
     extracted_inliers = cloud_filtered.extract(inliers, negative=False)
 
     extracted_outliers = cloud_filtered.extract(inliers, negative=True)
     cloud_objects = extracted_outliers
-    # TODO: Euclidean Clustering
+    # Euclidean Clustering
 
     # converting XYZRGB to XYZ
     white_cloud = XYZRGB_to_XYZ(extracted_outliers)
@@ -155,7 +155,7 @@ def pcl_callback(pcl_msg):
     # Extract indices for each of the discovered clusters
     cluster_indices = ec.Extract()
 
-    # TODO: Create Cluster-Mask Point Cloud to visualize each cluster separately
+    # Create Cluster-Mask Point Cloud to visualize each cluster separately
 
     # Assign a color corresponding to each segmented object in scene
     cluster_color = get_color_list(len(cluster_indices))
@@ -173,11 +173,11 @@ def pcl_callback(pcl_msg):
     cluster_cloud = pcl.PointCloud_PointXYZRGB()
     cluster_cloud.from_list(color_cluster_point_list)
 
-    # TODO: Convert PCL data to ROS messages
+    # Convert PCL data to ROS messages
     ros_cloud_objects = pcl_to_ros(extracted_outliers)
     ros_cluster_cloud = pcl_to_ros(cluster_cloud)
     ros_cloud_table = pcl_to_ros(extracted_inliers)
-    # TODO: Publish ROS messages
+    # Publish ROS messages
     pcl_objects_seg_pub.publish(ros_cluster_cloud)
     pcl_objects_pub.publish(ros_cloud_objects)
     pcl_table_pub.publish(ros_cloud_table)
